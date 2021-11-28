@@ -12,8 +12,14 @@ export const renderSeed = ({ seed, breakpoint }: RenderSeedProps) => {
     <Seed mobileBreakpoint={breakpoint}>
       <SeedItem>
         <div>
-          <SeedTeam>{seed.teams?.[0]?.name || '-----------'}</SeedTeam>
-          <SeedTeam>{seed.teams?.[1]?.name || '-----------'}</SeedTeam>
+          <SeedTeam>
+            <span>{seed.teams?.[0]?.name || '-----------'}</span>
+            <span>{seed.teams?.[0]?.score || '-'}</span>
+          </SeedTeam>
+          <SeedTeam>
+            <span>{seed.teams?.[1]?.name || '-----------'}</span>
+            <span>{seed.teams?.[1]?.score || '-'}</span>
+          </SeedTeam>
         </div>
       </SeedItem>
       <SeedTime mobileBreakpoint={breakpoint}>{seed.date}</SeedTime>
